@@ -9,5 +9,24 @@
         android:id="@+id/homeFragment"
         android:name="buu.informatics.s59160378.footballmaster.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameFragment"
+        android:name="buu.informatics.s59160378.footballmaster.GameFragment"
+        android:label="fragment_game"
+        tools:layout="@layout/fragment_game" />
+    <fragment
+        android:id="@+id/answerFragment"
+        android:name="buu.informatics.s59160378.footballmaster.AnswerFragment"
+        android:label="fragment_answer"
+        tools:layout="@layout/fragment_answer" />
+    <fragment
+        android:id="@+id/scoreFragment"
+        android:name="buu.informatics.s59160378.footballmaster.ScoreFragment"
+        android:label="fragment_score"
+        tools:layout="@layout/fragment_score" />
 </navigation>
