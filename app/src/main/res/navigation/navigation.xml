@@ -18,7 +18,11 @@
         android:id="@+id/gameFragment"
         android:name="buu.informatics.s59160378.footballmaster.GameFragment"
         android:label="fragment_game"
-        tools:layout="@layout/fragment_game" />
+        tools:layout="@layout/fragment_game" >
+        <action
+            android:id="@+id/action_gameFragment_to_answerFragment"
+            app:destination="@id/answerFragment" />
+    </fragment>
     <fragment
         android:id="@+id/answerFragment"
         android:name="buu.informatics.s59160378.footballmaster.AnswerFragment"

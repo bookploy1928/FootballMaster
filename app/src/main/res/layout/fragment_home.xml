@@ -69,6 +69,7 @@
                 android:layout_marginTop="64dp"
                 android:background="@drawable/play2"
                 android:text="play"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/editText"
                 app:layout_constraintHorizontal_bias="0.571"
                 app:layout_constraintStart_toStartOf="@+id/editText"

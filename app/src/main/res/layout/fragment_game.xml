@@ -1,18 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-    <FrameLayout
+
+    <androidx.constraintlayout.widget.ConstraintLayout
 
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".GameFragment">
+        android:layout_height="match_parent" >
 
-        <!-- TODO: Update blank fragment layout -->
+        <Button
+            android:id="@+id/buttonAns2"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/holo_orange_dark"
+            android:text="Button"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonAns1" />
+
+        <Button
+            android:id="@+id/buttonAns3"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/design_default_color_primary_dark"
+            android:text="Button"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.354"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonAns2" />
+
+        <Button
+            android:id="@+id/buttonAns4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/holo_green_dark"
+            android:text="Button"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonAns3"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="409dp"
+            android:layout_height="60dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="30dp"
+                android:layout_height="26dp"
+                android:layout_marginEnd="16dp"
+                android:text="TextView"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.529" />
+
+            <TextView
+                android:id="@+id/textUsername"
+                android:layout_width="147dp"
+                android:layout_height="26dp"
+                android:layout_marginStart="32dp"
+                android:fontFamily="@font/roboto"
+                android:text="NickName"
+                android:textColor="@android:color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.529" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="34dp"
+                android:layout_height="28dp"
+                android:layout_marginEnd="48dp"
+                android:text="TextView"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/textView7"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.562" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment" />
+            android:id="@+id/textQuestion"
+            android:layout_width="320dp"
+            android:layout_height="76dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="10dp"
+            android:background="#82C1DD"
+            android:editable="false"
+            android:fontFamily="@font/roboto"
+            android:text="&quot;You'll Never Walk Alone&quot;Is a song of praise of any football club"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
-    </FrameLayout>
+        <Button
+            android:id="@+id/buttonHint"
+            android:layout_width="150dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/hint"
+            android:fontFamily="@font/roboto"
+            android:text="Hint"
+            app:layout_constraintBottom_toBottomOf="@+id/buttonSkip"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/buttonSkip"
+            android:layout_width="150dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="61dp"
+            android:background="@drawable/skip"
+            android:fontFamily="@font/roboto"
+            android:text="Skip"
+            app:layout_constraintBottom_toTopOf="@+id/buttonAns1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textQuestion"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/buttonAns1"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="30dp"
+            android:background="@android:color/holo_red_dark"
+            android:text="Button"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonHint" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

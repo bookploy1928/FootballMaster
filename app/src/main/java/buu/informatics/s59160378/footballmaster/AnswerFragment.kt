@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import buu.informatics.s59160378.footballmaster.databinding.FragmentAnswerBinding
 
 /**
  * A simple [Fragment] subclass.
@@ -16,8 +18,9 @@ class AnswerFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_answer, container, false)
+        val binding = DataBindingUtil.inflate<FragmentAnswerBinding>(inflater,
+            R.layout.fragment_answer,container,false)
+        return binding.root
     }
 
 
