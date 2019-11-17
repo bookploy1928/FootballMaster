@@ -21,7 +21,19 @@
         tools:layout="@layout/fragment_game" >
         <action
             android:id="@+id/action_gameFragment_to_answerFragment"
-            app:destination="@id/answerFragment" />
+            app:destination="@id/answerFragment"
+            app:popUpTo="@+id/homeFragment"
+            app:popUpToInclusive="false" />
+        <argument
+            android:name="questions"
+            app:argType="buu.informatics.s59160378.footballmaster.Question[]" />
+        <action
+            android:id="@+id/action_gameFragment_to_scoreFragment"
+            app:destination="@id/scoreFragment"
+            app:popUpTo="@+id/homeFragment" />
+        <argument
+            android:name="yourName"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/answerFragment"
@@ -33,14 +45,28 @@
             app:argType="string" />
         <argument
             android:name="correction"
-            app:argType="boolean" />
+            app:argType="string" />
         <action
             android:id="@+id/action_answerFragment_to_gameFragment"
-            app:destination="@id/gameFragment" />
+            app:destination="@id/gameFragment"
+            app:popUpTo="@+id/homeFragment" />
+        <argument
+            android:name="questions"
+            app:argType="buu.informatics.s59160378.footballmaster.Question[]" />
+        <argument
+            android:name="yourName"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/scoreFragment"
         android:name="buu.informatics.s59160378.footballmaster.ScoreFragment"
         android:label="fragment_score"
-        tools:layout="@layout/fragment_score" />
+        tools:layout="@layout/fragment_score" >
+        <action
+            android:id="@+id/action_scoreFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <argument
+            android:name="yourName"
+            app:argType="string" />
+    </fragment>
 </navigation>

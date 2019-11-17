@@ -6,12 +6,14 @@ import androidx.lifecycle.ViewModelProvider
 
 class AnswerViewModelFactory (
     private val answerFact: String,
-    private val correction: Boolean)
+    private val correction: String,
+    private val arrQuestion: Array<Question>,
+    private val yourName:String)
     : ViewModelProvider.Factory {
     @Suppress("unchecked_cast")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(AnswerViewModel::class.java)) {
-            return AnswerViewModel(answerFact, correction) as T
+            return AnswerViewModel(answerFact, correction,arrQuestion,yourName) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }

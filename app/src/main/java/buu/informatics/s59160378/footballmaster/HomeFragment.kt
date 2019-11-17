@@ -7,7 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
 import buu.informatics.s59160378.footballmaster.databinding.FragmentHomeBinding
 import timber.log.Timber
 
@@ -15,17 +17,22 @@ import timber.log.Timber
  * A simple [Fragment] subclass.
  */
 class HomeFragment : Fragment() {
+    private lateinit var viewModel: HomeViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
 
     ): View? {
+        viewModel = ViewModelProviders.of(this).get(HomeViewModel::class.java)
         val binding = DataBindingUtil.inflate<FragmentHomeBinding>(inflater,
             R.layout.fragment_home,container,false)
 
         binding.playButton.setOnClickListener { view : View ->
-            view.findNavController().navigate(R.id.action_homeFragment_to_gameFragment)
+
+            viewModel.setName(binding.editText.text.toString())
+            val action = HomeFragmentDirections.actionHomeFragmentToGameFragment(viewModel.questions,viewModel.yourName)
+            NavHostFragment.findNavController(this).navigate(action)
         }
         Timber.i("onCreate called")
         return binding.root

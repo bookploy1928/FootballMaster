@@ -5,17 +5,17 @@ import androidx.lifecycle.ViewModel
 import timber.log.Timber
 
 
-class AnswerViewModel (val answerFact: String, val correction: Boolean) : ViewModel() {
+class AnswerViewModel (val answerFact: String, val correction: String,val arrQuestion: Array<Question>,var yourName:String) : ViewModel() {
 
     var resultString: String
 
     init {
-        Timber.i(correction.toString() + " test")
-
-        if (correction) {
+        if (correction == "correct") {
             resultString = "Correct^^"
-        } else {
-            resultString = "Incorrect!!"
+        } else if(correction == "timeUp") {
+            resultString = "TimeUP!!"
+        }else {
+            resultString = "InCorrect!!"
         }
     }
 }
