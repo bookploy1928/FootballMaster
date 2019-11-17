@@ -67,17 +67,6 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/textView7"
-                android:layout_width="30dp"
-                android:layout_height="26dp"
-                android:layout_marginEnd="16dp"
-                android:text="TextView"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.529" />
-
-            <TextView
                 android:id="@+id/textUsername"
                 android:layout_width="147dp"
                 android:layout_height="26dp"
@@ -90,16 +79,6 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.529" />
 
-            <TextView
-                android:id="@+id/textView8"
-                android:layout_width="34dp"
-                android:layout_height="28dp"
-                android:layout_marginEnd="48dp"
-                android:text="TextView"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/textView7"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.562" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
@@ -120,43 +99,18 @@
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
         <Button
-            android:id="@+id/buttonHint"
-            android:layout_width="150dp"
-            android:layout_height="44dp"
-            android:layout_marginStart="16dp"
-            android:background="@drawable/hint"
-            android:fontFamily="@font/roboto"
-            android:text="Hint"
-            app:layout_constraintBottom_toBottomOf="@+id/buttonSkip"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <Button
-            android:id="@+id/buttonSkip"
-            android:layout_width="150dp"
-            android:layout_height="44dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="61dp"
-            android:background="@drawable/skip"
-            android:fontFamily="@font/roboto"
-            android:text="Skip"
-            app:layout_constraintBottom_toTopOf="@+id/buttonAns1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textQuestion"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <Button
             android:id="@+id/buttonAns1"
             android:layout_width="0dp"
             android:layout_height="44dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="52dp"
             android:background="@android:color/holo_red_dark"
             android:text="@{gameViewModel.answers[0]}"
             android:textAllCaps="false"
             android:textColor="@android:color/white"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/buttonHint" />
+            app:layout_constraintTop_toBottomOf="@+id/textQuestion" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

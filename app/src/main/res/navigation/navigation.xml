@@ -31,6 +31,12 @@
         <argument
             android:name="textFact"
             app:argType="string" />
+        <argument
+            android:name="correction"
+            app:argType="boolean" />
+        <action
+            android:id="@+id/action_answerFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
     </fragment>
     <fragment
         android:id="@+id/scoreFragment"

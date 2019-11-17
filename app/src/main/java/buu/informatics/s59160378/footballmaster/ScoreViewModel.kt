@@ -1,4 +1,9 @@
 package buu.informatics.s59160378.footballmaster
 
-class ScoreViewModel {
+import androidx.lifecycle.ViewModel
+import timber.log.Timber
+
+class ScoreViewModel (val finalScore: Int) : ViewModel() {
+
+
 }

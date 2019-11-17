@@ -32,20 +32,20 @@ class GameFragment : Fragment() {
         binding.gameViewModel = viewModel
 
         binding.buttonAns1.setOnClickListener { view : View ->
-            val action = GameFragmentDirections.actionGameFragmentToAnswerFragment(viewModel.answerCheck(0))
+            val action = GameFragmentDirections.actionGameFragmentToAnswerFragment(viewModel.getCurrentQuestionFact(), viewModel.answerCheck(0))
             NavHostFragment.findNavController(this).navigate(action)
         }
 
         binding.buttonAns2.setOnClickListener { view : View ->
-            val action = GameFragmentDirections.actionGameFragmentToAnswerFragment(viewModel.answerCheck(0))
+            val action = GameFragmentDirections.actionGameFragmentToAnswerFragment(viewModel.getCurrentQuestionFact(), viewModel.answerCheck(1))
             NavHostFragment.findNavController(this).navigate(action)
         }
         binding.buttonAns3.setOnClickListener { view : View ->
-            val action = GameFragmentDirections.actionGameFragmentToAnswerFragment(viewModel.answerCheck(0))
+            val action = GameFragmentDirections.actionGameFragmentToAnswerFragment(viewModel.getCurrentQuestionFact(), viewModel.answerCheck(2))
             NavHostFragment.findNavController(this).navigate(action)
         }
         binding.buttonAns4.setOnClickListener { view : View ->
-            val action = GameFragmentDirections.actionGameFragmentToAnswerFragment(viewModel.answerCheck(0))
+            val action = GameFragmentDirections.actionGameFragmentToAnswerFragment(viewModel.getCurrentQuestionFact(), viewModel.answerCheck(3))
             NavHostFragment.findNavController(this).navigate(action)
         }
         Timber.i("onCreate called")

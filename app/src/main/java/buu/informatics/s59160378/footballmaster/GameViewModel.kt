@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import timber.log.Timber
 
 class GameViewModel : ViewModel(){
+
     data class Question(
         val text: String,
         val answers: List<String>,
@@ -27,23 +28,22 @@ class GameViewModel : ViewModel(){
     init {
        questions = mutableListOf(
             Question(text = "You'll Never Walk Alone.Is a song of praise of any football club?",
-                answers = listOf("Manchester United", "Manchester City", "Liverpool", "Chelsea"),
-                textFact = "Testttttttttttt111t"),
+                answers = listOf("Liverpool","Manchester United", "Manchester City",  "Chelsea"),
+                textFact = "You'll Never Walk Alone is the song of the Liverpool footbal club"),
             Question(text = "World Cup 2018. Who is hosting?",
                 answers = listOf("Russia", "Brazil", "France", "Thailand"),
-                textFact = "Testtttttttttttt111"),
+                textFact = "Russia is the country that hosts the World Cup 2018."),
             Question(text = "What team is the 2018 World Cup champion?",
                 answers = listOf("France", "Brazil", "Russia", "Argentina"),
-                textFact = "Testtttttttttttt111"),
+                textFact = "France is the country that won the World Cup 2018."),
             Question(text = "The most expensive player in the world?",
                answers = listOf("Kylian Mbappe", "Mohamed Salah", "Raheem Sterling", "Lionel Messi"),
-                textFact = "Testtttttttttttt1111"),
-            Question(text = "What team is the uefa champions league?",
+                textFact = "The most expensive player in the world is Kylian Mbappe."),
+            Question(text = "What team is the UEFA Champions league?",
                answers = listOf("Liverpool", "Barcelona", "Juventus", "Manchester United"),
-                textFact = "Testtttttttttttt1111555")
-
-
+                textFact = "Liverpool is a UEFA Champion League")
         )
+        Timber.i("GameViewModelCall")
 
         numQuestions = Math.min((questions.size + 1) / 2, 3)
         randomizeQuestions()
@@ -64,8 +64,12 @@ class GameViewModel : ViewModel(){
         answers.shuffle()
     }
 
-    fun answerCheck(answerId:Int) : String{
-        return currentQuestion.textFact
+    fun answerCheck(answerId:Int) : Boolean{
+        return answers[answerId] == questions[questionIndex].answers[0]
+    }
+
+    fun getCurrentQuestionFact() : String {
+        return questions[questionIndex].textFact
     }
 
     // Sets the question and randomizes the answers.  This only changes the data, not the UI.
