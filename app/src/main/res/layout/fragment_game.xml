@@ -4,6 +4,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="gameViewModel"
+            type="buu.informatics.s59160378.footballmaster.GameViewModel" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
 
         android:layout_width="match_parent"
@@ -15,7 +21,8 @@
             android:layout_height="44dp"
             android:layout_marginTop="5dp"
             android:background="@android:color/holo_orange_dark"
-            android:text="Button"
+            android:text="@{gameViewModel.answers[1]}"
+            android:textAllCaps="false"
             android:textColor="@android:color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -27,7 +34,8 @@
             android:layout_height="44dp"
             android:layout_marginTop="5dp"
             android:background="@color/design_default_color_primary_dark"
-            android:text="Button"
+            android:text="@{gameViewModel.answers[2]}"
+            android:textAllCaps="false"
             android:textColor="@android:color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.354"
@@ -40,7 +48,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:background="@android:color/holo_green_dark"
-            android:text="Button"
+            android:text="@{gameViewModel.answers[3]}"
+            android:textAllCaps="false"
             android:textColor="@android:color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -103,7 +112,7 @@
             android:background="#82C1DD"
             android:editable="false"
             android:fontFamily="@font/roboto"
-            android:text="&quot;You'll Never Walk Alone&quot;Is a song of praise of any football club"
+            android:text="@{gameViewModel.currentQuestion.text}"
             android:textColor="@android:color/black"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -142,7 +151,8 @@
             android:layout_height="44dp"
             android:layout_marginTop="30dp"
             android:background="@android:color/holo_red_dark"
-            android:text="Button"
+            android:text="@{gameViewModel.answers[0]}"
+            android:textAllCaps="false"
             android:textColor="@android:color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

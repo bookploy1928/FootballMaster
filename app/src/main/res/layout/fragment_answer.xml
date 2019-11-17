@@ -3,6 +3,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="answerViewModel"
+            type="buu.informatics.s59160378.footballmaster.AnswerViewModel" />
+    </data>
 <androidx.constraintlayout.widget.ConstraintLayout
 
 android:layout_width="match_parent"
@@ -30,7 +36,7 @@ tools:context=".AnswerFragment" >
     android:layout_marginTop="50dp"
     android:background="@android:color/holo_green_light"
     android:fontFamily="@font/roboto"
-    android:text="TextView"
+    android:text="@{answerViewModel.answerFact}"
     android:textColor="@android:color/black"
     android:textSize="16sp"
     app:layout_constraintEnd_toEndOf="parent"

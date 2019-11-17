@@ -27,7 +27,11 @@
         android:id="@+id/answerFragment"
         android:name="buu.informatics.s59160378.footballmaster.AnswerFragment"
         android:label="fragment_answer"
-        tools:layout="@layout/fragment_answer" />
+        tools:layout="@layout/fragment_answer" >
+        <argument
+            android:name="textFact"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/scoreFragment"
         android:name="buu.informatics.s59160378.footballmaster.ScoreFragment"

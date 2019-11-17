@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import buu.informatics.s59160378.footballmaster.databinding.FragmentHomeBinding
+import timber.log.Timber
 
 /**
  * A simple [Fragment] subclass.
@@ -26,6 +27,7 @@ class HomeFragment : Fragment() {
         binding.playButton.setOnClickListener { view : View ->
             view.findNavController().navigate(R.id.action_homeFragment_to_gameFragment)
         }
+        Timber.i("onCreate called")
         return binding.root
     }
 
