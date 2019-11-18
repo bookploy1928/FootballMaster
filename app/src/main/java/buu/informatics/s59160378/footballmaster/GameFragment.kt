@@ -33,7 +33,7 @@ class GameFragment : Fragment() {
 //            NavHostFragment.findNavController(this).navigate(R.id.action_gameFragment_to_scoreFragment)
 //        }
 
-        viewModelFactory = GameViewModelFactory(args.questions,args.yourName)
+        viewModelFactory = GameViewModelFactory(args.questions,args.yourName,args.score)
         viewModel = ViewModelProviders.of(this,viewModelFactory).get(GameViewModel::class.java)
         val binding = DataBindingUtil.inflate<FragmentGameBinding>(inflater,
             R.layout.fragment_game,container,false)
@@ -41,26 +41,26 @@ class GameFragment : Fragment() {
         binding.gameViewModel = viewModel
 
         binding.buttonAns1.setOnClickListener { view : View ->
-            val action = GameFragmentDirections.actionGameFragmentToAnswerFragment(viewModel.getCurrentQuestionFact(), viewModel.answerCheck(0), viewModel.questionsArr,viewModel.yourName)
+            val action = GameFragmentDirections.actionGameFragmentToAnswerFragment(viewModel.getCurrentQuestionFact(), viewModel.answerCheck(0), viewModel.questionsArr,viewModel.yourName,viewModel.score)
             NavHostFragment.findNavController(this).navigate(action)
         }
 
         binding.buttonAns2.setOnClickListener { view : View ->
-            val action = GameFragmentDirections.actionGameFragmentToAnswerFragment(viewModel.getCurrentQuestionFact(), viewModel.answerCheck(1), viewModel.questionsArr,viewModel.yourName)
+            val action = GameFragmentDirections.actionGameFragmentToAnswerFragment(viewModel.getCurrentQuestionFact(), viewModel.answerCheck(1), viewModel.questionsArr,viewModel.yourName,viewModel.score)
             NavHostFragment.findNavController(this).navigate(action)
         }
         binding.buttonAns3.setOnClickListener { view : View ->
-            val action = GameFragmentDirections.actionGameFragmentToAnswerFragment(viewModel.getCurrentQuestionFact(), viewModel.answerCheck(2), viewModel.questionsArr,viewModel.yourName)
+            val action = GameFragmentDirections.actionGameFragmentToAnswerFragment(viewModel.getCurrentQuestionFact(), viewModel.answerCheck(2), viewModel.questionsArr,viewModel.yourName,viewModel.score)
             NavHostFragment.findNavController(this).navigate(action)
         }
         binding.buttonAns4.setOnClickListener { view : View ->
-            val action = GameFragmentDirections.actionGameFragmentToAnswerFragment(viewModel.getCurrentQuestionFact(), viewModel.answerCheck(3), viewModel.questionsArr,viewModel.yourName)
+            val action = GameFragmentDirections.actionGameFragmentToAnswerFragment(viewModel.getCurrentQuestionFact(), viewModel.answerCheck(3), viewModel.questionsArr,viewModel.yourName,viewModel.score)
             NavHostFragment.findNavController(this).navigate(action)
         }
 
         viewModel.onGameFinish.observe(this, Observer { onGameFinish ->
            if (onGameFinish){
-               val action = GameFragmentDirections.actionGameFragmentToAnswerFragment(viewModel.getCurrentQuestionFact(), viewModel.answerCheck(-1), viewModel.questionsArr,viewModel.yourName)
+               val action = GameFragmentDirections.actionGameFragmentToAnswerFragment(viewModel.getCurrentQuestionFact(), viewModel.answerCheck(-1), viewModel.questionsArr,viewModel.yourName,viewModel.score)
                NavHostFragment.findNavController(this).navigate(action)
                viewModel.onFinishNavigate()
            }
@@ -68,8 +68,11 @@ class GameFragment : Fragment() {
 
         viewModel.onQuestionEmpty.observe(this, Observer { onQuestionEmpty ->
             if (onQuestionEmpty){
-                NavHostFragment.findNavController(this).navigate(R.id.action_gameFragment_to_scoreFragment)
+                val action = GameFragmentDirections.actionGameFragmentToScoreFragment(viewModel.yourName,viewModel.score)
+                NavHostFragment.findNavController(this).navigate(action)
                 viewModel.onFinishNavigate()
+
+
             }
         })
 

@@ -31,8 +31,12 @@ class HomeFragment : Fragment() {
         binding.playButton.setOnClickListener { view : View ->
 
             viewModel.setName(binding.editText.text.toString())
-            val action = HomeFragmentDirections.actionHomeFragmentToGameFragment(viewModel.questions,viewModel.yourName)
+            val action = HomeFragmentDirections.actionHomeFragmentToGameFragment(viewModel.questions,viewModel.yourName,viewModel.score)
             NavHostFragment.findNavController(this).navigate(action)
+        }
+
+        binding.buttonScoreboard.setOnClickListener { view : View ->
+            view.findNavController().navigate(R.id.action_homeFragment_to_scoreboardFragment)
         }
         Timber.i("onCreate called")
         return binding.root

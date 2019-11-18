@@ -25,7 +25,7 @@ class AnswerFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val args = AnswerFragmentArgs.fromBundle(arguments!!)
-        viewModelFactory = AnswerViewModelFactory(args.textFact, args.correction,args.questions,args.yourName)
+        viewModelFactory = AnswerViewModelFactory(args.textFact, args.correction,args.questions,args.yourName,args.score)
         viewModel = ViewModelProviders.of(this, viewModelFactory).get(AnswerViewModel::class.java)
 
 
@@ -36,7 +36,7 @@ class AnswerFragment : Fragment() {
         binding.answerViewModel = viewModel
 
         binding.buttonNext.setOnClickListener { view : View ->
-            val action = AnswerFragmentDirections.actionAnswerFragmentToGameFragment( viewModel.arrQuestion,viewModel.yourName)
+            val action = AnswerFragmentDirections.actionAnswerFragmentToGameFragment( viewModel.arrQuestion,viewModel.yourName,viewModel.score)
             NavHostFragment.findNavController(this).navigate(action)
         }
         return binding.root

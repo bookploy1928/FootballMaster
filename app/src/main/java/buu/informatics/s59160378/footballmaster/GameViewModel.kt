@@ -8,7 +8,7 @@ import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
 import timber.log.Timber
 
-class GameViewModel(var questionsArr: Array<Question>,var yourName:String) : ViewModel(){
+class GameViewModel(var questionsArr: Array<Question>,var yourName:String,var score:Int) : ViewModel(){
 
     companion object {
 

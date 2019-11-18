@@ -6,9 +6,11 @@ class HomeViewModel (): ViewModel() {
 
     var questions: Array<Question>
     var yourName:String
+    var score:Int
 
     init {
         yourName = ""
+        score = 0
         questions = arrayOf(
             Question(text = "You'll Never Walk Alone.Is a song of praise of any football club?",
                 answers = listOf("Liverpool","Manchester United", "Manchester City",  "Chelsea"),
