@@ -6,7 +6,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/holo_blue_bright"
+        android:background="@drawable/scoreboard"
         tools:context=".ScoreboardFragment">
 
         <androidx.recyclerview.widget.RecyclerView
@@ -50,7 +50,7 @@
                 android:layout_height="0dp"
                 android:background="@color/design_default_color_primary_dark"
                 android:fontFamily="@font/roboto"
-                android:text="Name"
+                android:text="@string/titleName"
                 android:textAlignment="center"
                 android:textColor="@android:color/background_light"
                 android:textSize="18sp"
@@ -67,7 +67,7 @@
                 android:layout_height="0dp"
                 android:background="@color/design_default_color_primary_dark"
                 android:fontFamily="@font/roboto"
-                android:text="Score"
+                android:text="@string/titleScore"
                 android:textAlignment="center"
                 android:textColor="@android:color/background_light"
                 android:textSize="18sp"

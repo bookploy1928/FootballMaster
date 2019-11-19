@@ -14,5 +14,8 @@
     <string name="home">Home</string>
     <string name="buttonScoreboard">Score Board</string>
     <string name="scoreBoard">Score Board</string>
+    <string name="titleName">Name</string>
+    <string name="titleScore">Score</string>
+    <string name="buttonShare">share</string>
 
 </resources>

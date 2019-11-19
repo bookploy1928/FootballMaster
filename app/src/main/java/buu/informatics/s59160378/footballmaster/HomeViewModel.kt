@@ -38,7 +38,10 @@ class HomeViewModel (): ViewModel() {
                 textFact = "The most expensive player in the world is Kylian Mbappe."),
             Question(text = "What team is the UEFA Champions league?",
                 answers = listOf("Liverpool", "Barcelona", "Juventus", "Manchester United"),
-                textFact = "Liverpool is a UEFA Champion League")
+                textFact = "Liverpool is a UEFA Champion League"),
+            Question(text = "Test?",
+                answers = listOf("test", "Barcelona", "Juventus", "Manchester United"),
+                textFact = "Test")
         )
     }
 

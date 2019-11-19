@@ -7,10 +7,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import buu.informatics.s59160378.footballmaster.databinding.FragmentAnswerBinding
+import com.google.android.material.snackbar.Snackbar
 
 /**
  * A simple [Fragment] subclass.
@@ -39,8 +41,20 @@ class AnswerFragment : Fragment() {
             val action = AnswerFragmentDirections.actionAnswerFragmentToGameFragment( viewModel.arrQuestion,viewModel.yourName,viewModel.score)
             NavHostFragment.findNavController(this).navigate(action)
         }
+
+        viewModel.showSnackBarEvent.observe(this, Observer {
+            if (it == true) { // Observed state is true.
+                Snackbar.make(
+                    activity!!.findViewById(android.R.id.content),"คุณได้คะแนน " +viewModel.score+" คะแนน",
+                    Snackbar.LENGTH_SHORT // How long to display the message.
+                ).show()
+                viewModel.doneShowingSnackbar()
+            }
+        })
         return binding.root
     }
 
 
 }
+
+

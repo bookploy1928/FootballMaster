@@ -2,6 +2,8 @@ package buu.informatics.s59160378.footballmaster
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import buu.informatics.s59160378.footballmaster.Database.ScoreDatabaseDao
 import kotlinx.coroutines.*
@@ -18,6 +20,7 @@ class ScoreViewModel (var yourName:String, var score:Int,
         uiScope.launch {
             storeScore(yourName, score)
         }
+
     }
     private suspend fun storeScore(name: String, score: Int) {
         return withContext(Dispatchers.IO) {
@@ -28,5 +31,7 @@ class ScoreViewModel (var yourName:String, var score:Int,
 //            database.clear()
         }
     }
+
+
 
 }

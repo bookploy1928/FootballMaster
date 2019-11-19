@@ -9,53 +9,55 @@
             name="answerViewModel"
             type="buu.informatics.s59160378.footballmaster.AnswerViewModel" />
     </data>
-<androidx.constraintlayout.widget.ConstraintLayout
 
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-tools:context=".AnswerFragment" >
+    <androidx.constraintlayout.widget.ConstraintLayout
 
-<TextView
-    android:id="@+id/yourAnswer"
-    android:layout_width="266dp"
-    android:layout_height="42dp"
-    android:layout_marginTop="80dp"
-    android:fontFamily="@font/roboto_bold"
-    android:text="@{answerViewModel.resultString}"
-    android:textAlignment="center"
-    android:textColor="@color/design_default_color_primary_dark"
-    android:textSize="30sp"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bggame"
+        tools:context=".AnswerFragment">
 
-    <TextView
-        android:id="@+id/textFact"
-        android:layout_width="246dp"
-        android:layout_height="106dp"
-        android:layout_marginTop="50dp"
-        android:background="@android:color/darker_gray"
-        android:fontFamily="@font/roboto"
-        android:text="@{answerViewModel.answerFact}"
-        android:textColor="@android:color/black"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/yourAnswer" />
+        <TextView
+            android:id="@+id/yourAnswer"
+            android:layout_width="266dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="80dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@{answerViewModel.resultString}"
+            android:textAlignment="center"
+            android:textColor="@android:color/holo_red_light"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-<Button
-    android:id="@+id/buttonNext"
-    android:layout_width="208dp"
-    android:layout_height="50dp"
-    android:layout_marginTop="50dp"
-    android:background="#3F51B5"
-    android:fontFamily="@font/roboto"
-    android:text="@string/next"
-    android:textColor="@android:color/white"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/textFact"
-    app:layout_constraintVertical_bias="0.0" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/textFact"
+            android:layout_width="246dp"
+            android:layout_height="106dp"
+            android:layout_marginTop="50dp"
+            android:background="@android:color/darker_gray"
+            android:fontFamily="@font/roboto"
+            android:text="@{answerViewModel.answerFact}"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/yourAnswer" />
+
+        <Button
+            android:id="@+id/buttonNext"
+            android:layout_width="208dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="50dp"
+            android:background="#3F51B5"
+            android:fontFamily="@font/roboto"
+            android:text="@string/next"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textFact"
+            app:layout_constraintVertical_bias="0.0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

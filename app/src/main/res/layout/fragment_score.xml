@@ -12,14 +12,19 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ScoreFragment" >
+        android:background="@drawable/score"
+        tools:context=".ScoreFragment">
 
         <TextView
             android:id="@+id/textYourScore"
             android:layout_width="wrap_content"
             android:layout_height="41dp"
             android:layout_marginTop="80dp"
+            android:background="@android:color/darker_gray"
             android:text="@string/your_score"
+            android:textColor="@color/design_default_color_primary_dark"
+            android:textColorHighlight="@android:color/holo_blue_bright"
+            android:textColorHint="@color/colorPrimary"
             android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.532"
@@ -31,13 +36,13 @@
             android:layout_width="0dp"
             android:layout_height="69dp"
             android:layout_marginStart="90dp"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="50dp"
             android:layout_marginEnd="90dp"
             android:background="@android:color/holo_orange_light"
             android:fontFamily="@font/roboto_bold"
             android:text="@{scoreViewModel.scoreString}"
             android:textAlignment="center"
-            android:textSize="24sp"
+            android:textSize="36sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textYourScore" />
@@ -54,6 +59,19 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textScore" />
+
+        <Button
+            android:id="@+id/buttonShare"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="80dp"
+            android:background="@android:color/holo_red_light"
+            android:text="@string/buttonShare"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonBackToHome" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
