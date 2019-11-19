@@ -3,4 +3,16 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="about">about</string>
+    <string name="football_master">Football Master</string>
+    <string name="your_name">Your Name</string>
+    <string name="play">play</string>
+    <string name="about2">About</string>
+    <string name="aboutText">Football Master is a program developed to measure the ability tox is a program developed to measure the ability to answer football-related questions. Created by Mr.Peeranut Kanpai No.59160378 G.1</string>
+    <string name="next">Next</string>
+    <string name="your_score">Your Score</string>
+    <string name="home">Home</string>
+    <string name="buttonScoreboard">Score Board</string>
+    <string name="scoreBoard">Score Board</string>
+
 </resources>

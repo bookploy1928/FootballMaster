@@ -19,7 +19,7 @@ interface ScoreDatabaseDao {
     @Query("SELECT * from score_table WHERE scoreId = :key")
     fun get(key: Long): Score?
 
-    @Query ("SELECT * from score_table")
+    @Query ("SELECT * from score_table ORDER BY score DESC ")
     fun getAllScore(): LiveData<List<Score>>?
 //
 //    @Query ("SELECT * from score_table WHERE owner_id = :userId")

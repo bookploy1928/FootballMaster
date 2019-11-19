@@ -29,19 +29,19 @@ tools:context=".AnswerFragment" >
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent" />
 
-<TextView
-    android:id="@+id/textFact"
-    android:layout_width="246dp"
-    android:layout_height="106dp"
-    android:layout_marginTop="50dp"
-    android:background="@android:color/holo_green_light"
-    android:fontFamily="@font/roboto"
-    android:text="@{answerViewModel.answerFact}"
-    android:textColor="@android:color/black"
-    android:textSize="16sp"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/yourAnswer" />
+    <TextView
+        android:id="@+id/textFact"
+        android:layout_width="246dp"
+        android:layout_height="106dp"
+        android:layout_marginTop="50dp"
+        android:background="@android:color/darker_gray"
+        android:fontFamily="@font/roboto"
+        android:text="@{answerViewModel.answerFact}"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/yourAnswer" />
 
 <Button
     android:id="@+id/buttonNext"
@@ -50,7 +50,7 @@ tools:context=".AnswerFragment" >
     android:layout_marginTop="50dp"
     android:background="#3F51B5"
     android:fontFamily="@font/roboto"
-    android:text="Next"
+    android:text="@string/next"
     android:textColor="@android:color/white"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"

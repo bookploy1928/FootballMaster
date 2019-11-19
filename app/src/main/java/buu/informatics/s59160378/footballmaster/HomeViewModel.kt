@@ -1,15 +1,27 @@
 package buu.informatics.s59160378.footballmaster
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
+import timber.log.Timber
 
 class HomeViewModel (): ViewModel() {
 
     var questions: Array<Question>
-    var yourName:String
     var score:Int
 
+    private val _yourName = MutableLiveData<String>()
+    val yourName: LiveData<String>
+        get() = _yourName
+
+    val startButtonVisible = Transformations.map(yourName) {
+        Timber.i("changed")
+        it != ""
+    }
+
     init {
-        yourName = ""
+        _yourName.value = ""
         score = 0
         questions = arrayOf(
             Question(text = "You'll Never Walk Alone.Is a song of praise of any football club?",
@@ -31,7 +43,7 @@ class HomeViewModel (): ViewModel() {
     }
 
     fun setName(name:String){
-        yourName = name
+       _yourName.value = name
     }
 
 }

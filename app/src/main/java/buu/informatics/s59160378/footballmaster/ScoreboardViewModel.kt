@@ -14,13 +14,4 @@ application: Application
     private var viewModelJob = Job()
     private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
     var scoreList = database.getAllScore()
-
-    private suspend fun getAllScore(): LiveData<List<Score>>? {
-        return withContext(Dispatchers.IO) {
-            var scores = database.getAllScore()
-            scores
-
-//            database.clear()
-        }
-    }
 }
