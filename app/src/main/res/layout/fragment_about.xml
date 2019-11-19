@@ -45,10 +45,10 @@
 
     <TextView
         android:id="@+id/textView6"
-        android:layout_width="302dp"
-        android:layout_height="203dp"
+        android:layout_width="305dp"
+        android:layout_height="136dp"
         android:layout_marginTop="15dp"
-        android:background="@android:color/background_light"
+        android:background="?attr/colorButtonNormal"
         android:fontFamily="@font/roboto"
         android:text="@string/aboutText"
         android:textAlignment="center"

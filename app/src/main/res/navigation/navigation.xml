@@ -8,8 +8,8 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="buu.informatics.s59160378.footballmaster.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
+        android:label="Home"
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment_to_gameFragment"
             app:destination="@id/gameFragment" />
@@ -20,8 +20,8 @@
     <fragment
         android:id="@+id/gameFragment"
         android:name="buu.informatics.s59160378.footballmaster.GameFragment"
-        android:label="fragment_game"
-        tools:layout="@layout/fragment_game" >
+        android:label="Game"
+        tools:layout="@layout/fragment_game">
         <action
             android:id="@+id/action_gameFragment_to_answerFragment"
             app:destination="@id/answerFragment"
@@ -44,8 +44,8 @@
     <fragment
         android:id="@+id/answerFragment"
         android:name="buu.informatics.s59160378.footballmaster.AnswerFragment"
-        android:label="fragment_answer"
-        tools:layout="@layout/fragment_answer" >
+        android:label="Answer"
+        tools:layout="@layout/fragment_answer">
         <argument
             android:name="textFact"
             app:argType="string" />
@@ -69,8 +69,8 @@
     <fragment
         android:id="@+id/scoreFragment"
         android:name="buu.informatics.s59160378.footballmaster.ScoreFragment"
-        android:label="fragment_score"
-        tools:layout="@layout/fragment_score" >
+        android:label="Score"
+        tools:layout="@layout/fragment_score">
         <action
             android:id="@+id/action_scoreFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
@@ -84,10 +84,10 @@
     <fragment
         android:id="@+id/scoreboardFragment"
         android:name="buu.informatics.s59160378.footballmaster.ScoreboardFragment"
-        android:label="ScoreboardFragment" />
+        android:label="Scoreboard" />
     <fragment
         android:id="@+id/aboutFragment"
         android:name="buu.informatics.s59160378.footballmaster.AboutFragment"
-        android:label="fragment_about"
+        android:label="About"
         tools:layout="@layout/fragment_about" />
 </navigation>
